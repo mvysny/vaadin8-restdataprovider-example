@@ -1,7 +1,7 @@
 [![Built in Vaadin on Kotlin](http://vaadinonkotlin.eu/images/built_in_vok_badge_small.png)](http://vaadinonkotlin.eu)
 [![Build Status](https://travis-ci.org/mvysny/vaadin8-restdataprovider-example.svg?branch=master)](https://travis-ci.org/mvysny/vaadin8-restdataprovider-example)
 
-# Vaadin-on-Kotlin Vaadin 8 Example App / Archetype
+# Vaadin 8 REST Data Provider Example App
 
 Demonstrates the use of a full-blown REST DataProvider in a Vaadin 8 Grid. Please read more on
 how this exactly works at [Accessing NoSQL or REST data sources](http://www.vaadinonkotlin.eu/nosql_rest_datasources.html).
