@@ -17,7 +17,7 @@ data class Article(
         fun createRandomArticles() {
             val random = Random(1)
             db {
-                repeat(100) {
+                repeat(1000) {
                     Article(title = "${word1.random()} ${word2.random()}",
                             text = "Lorem Ipsum",
                             created = Instant.ofEpochMilli(System.currentTimeMillis() - random.nextLong(10000000L)),

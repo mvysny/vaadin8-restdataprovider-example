@@ -104,6 +104,6 @@ class JavalinRestServlet : HttpServlet() {
 fun Javalin.configureRest(): Javalin {
     val gson = GsonBuilder().create()
     gson.configureToJavalin()
-    crud2("/rest/articles", Article.getCrudHandler(false, maxLimit = 1000L))
+    crud2("/rest/articles", Article.getCrudHandler(false, maxLimit = 500L))
     return this
 }
