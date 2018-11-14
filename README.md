@@ -5,8 +5,10 @@
 
 Demonstrates the use of a full-blown REST DataProvider in a Vaadin 8 Grid. Please read more on
 how this exactly works at [Accessing NoSQL or REST data sources](http://www.vaadinonkotlin.eu/nosql_rest_datasources.html).
-To demo the REST capabilities, this project configures Grid to fetch the data over REST from the
-REST CRUD endpoints published by the project itself (fetches data from itself via `localhost:8080/rest/articles`); the REST CRUD server then uses vok-orm to fetch
+To demo the REST capabilities totally standalone, this project:
+
+* Configures Grid to fetch the data over REST from `localhost:8080/rest/articles`
+* Exposes the REST CRUD endpoints on `localhost:8080/rest/articles` and uses vok-orm to fetch
 data from an in-memory H2 database.
 
 Only requires a Servlet 3.0 container to run. Developed in Kotlin. Also demoes an auto-generated
