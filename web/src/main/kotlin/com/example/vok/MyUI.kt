@@ -7,6 +7,7 @@ import com.vaadin.navigator.PushStateNavigation
 import com.vaadin.server.VaadinRequest
 import com.vaadin.ui.UI
 import eu.vaadinonkotlin.restclient.CrudClient
+import eu.vaadinonkotlin.sql2o.overcomeFetchLimit
 import eu.vaadinonkotlin.vaadin8.sql2o.DataLoaderAdapter
 import eu.vaadinonkotlin.vaadin8.sql2o.generateFilterComponents
 import eu.vaadinonkotlin.vaadin8.sql2o.withConfigurableFilter2
@@ -20,7 +21,7 @@ import eu.vaadinonkotlin.vaadin8.sql2o.withConfigurableFilter2
 class MyUI : UI() {
 
     override fun init(request: VaadinRequest) {
-        val crud = CrudClient("http://localhost:8080/rest/articles/", Article::class.java)
+        val crud = CrudClient("http://localhost:8080/rest/articles/", Article::class.java).overcomeFetchLimit(100)
         grid<Article> {
             setSizeFull()
             dataProvider = DataLoaderAdapter(Article::class.java, crud, { it.id!! }).withConfigurableFilter2()
