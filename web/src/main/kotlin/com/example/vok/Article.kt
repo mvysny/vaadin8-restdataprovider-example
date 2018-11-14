@@ -20,7 +20,7 @@ data class Article(
                 repeat(1000) {
                     Article(title = "${word1.random()} ${word2.random()}",
                             text = "Lorem Ipsum",
-                            created = Instant.ofEpochMilli(System.currentTimeMillis() - random.nextLong(10000000L)),
+                            created = Instant.ofEpochMilli(System.currentTimeMillis() - random.nextLong(1000000000L)),
                             score = random.nextInt(10)
                     ).save()
                 }
