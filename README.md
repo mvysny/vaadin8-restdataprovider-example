@@ -36,6 +36,9 @@ curl "localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:th
 
 or via the browser: [localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:the&offset=5](http://localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:the&offset=5)
 
+When playing with the endpoint, do note that there are 1000 rows generated randomly but
+the CRUD endpoint is limited to return at most 100 (this is of course configurable).
+
 > Note: The CRUD endpoint support full filtering, sorting and paging capabilities.
 For details please see the [vok-rest](https://github.com/mvysny/vaadin-on-kotlin/tree/master/vok-rest)
 VoK module documentation.
