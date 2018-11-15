@@ -27,11 +27,14 @@ cd vaadin8-restdataprovider-example
 ./gradlew build web:appRun
 ```
 
-The app will be running on [http://localhost:8080/](http://localhost:8080/). You can access the CRUD endpoint at
+The app will be running on [http://localhost:8080/](http://localhost:8080/). You can access the CRUD endpoint via
+the command line:
 
 ```bash
 curl "localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:the&offset=5"
 ```
+
+or via the browser: [localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:the&offset=5](http://localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:the&offset=5)
 
 > Note: The CRUD endpoint support full filtering, sorting and paging capabilities.
 For details please see the [vok-rest](https://github.com/mvysny/vaadin-on-kotlin/tree/master/vok-rest)
