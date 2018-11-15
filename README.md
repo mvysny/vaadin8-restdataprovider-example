@@ -30,8 +30,12 @@ cd vaadin8-restdataprovider-example
 The app will be running on [http://localhost:8080/](http://localhost:8080/). You can access the CRUD endpoint at
 
 ```bash
-curl localhost:8080/rest/articles
+curl "localhost:8080/rest/articles?sort_by=created,-title&score=4&title=ilike:the&offset=5"
 ```
+
+> Note: The CRUD endpoint support full filtering, sorting and paging capabilities.
+For details please see the [vok-rest](https://github.com/mvysny/vaadin-on-kotlin/tree/master/vok-rest)
+VoK module documentation.
 
 Since the build system is a Gradle file written in Kotlin, we suggest you use [Intellij IDEA](https://www.jetbrains.com/idea/download)
 to edit the project files. The Community edition is enough to run the server
