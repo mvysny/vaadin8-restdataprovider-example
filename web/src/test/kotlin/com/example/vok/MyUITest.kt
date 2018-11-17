@@ -9,7 +9,6 @@ import com.github.mvysny.kaributesting.v8.expectRows
 import com.github.vokorm.deleteAll
 import com.vaadin.ui.Grid
 import eu.vaadinonkotlin.restclient.CrudClient
-import eu.vaadinonkotlin.sql2o.overcomeFetchLimit
 import io.javalin.Javalin
 import java.time.Instant
 

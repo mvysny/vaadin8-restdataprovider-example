@@ -19,7 +19,7 @@ allprojects {
 subprojects {
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     apply { plugin("kotlin") }
