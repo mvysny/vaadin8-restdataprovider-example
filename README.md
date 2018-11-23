@@ -15,6 +15,9 @@ Only requires a Servlet 3.0 container to run. Developed in Kotlin. Also demoes a
 Grid filter bar, therefore this example serves as a full replacement for Teppo Kurki's
 [FilteringTable](https://vaadin.com/directory/component/filteringtable).
 
+The screenshot of this app:
+![Screenshot](screenshot.png)
+
 The project uses code from [Vaadin-on-Kotlin](http://vaadinonkotlin.eu).
 
 # Getting Started
