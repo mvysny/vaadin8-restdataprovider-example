@@ -41,7 +41,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     // test
-    testCompile("com.github.mvysny.dynatest:dynatest-engine:0.12")
+    testCompile("com.github.mvysny.dynatest:dynatest-engine:0.13")
     testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.0.0")
     testCompile("org.eclipse.jetty.websocket:websocket-server:9.4.12.v20180830")
 }
