@@ -5,6 +5,7 @@ import com.github.mvysny.dynatest.DynaTest
 import com.github.mvysny.dynatest.expectList
 import com.github.mvysny.kaributesting.v8.MockVaadin
 import com.github.mvysny.kaributesting.v8._get
+import com.github.mvysny.kaributesting.v8.expectRow
 import com.github.mvysny.kaributesting.v8.expectRows
 import com.github.vokorm.deleteAll
 import com.vaadin.ui.Grid
@@ -32,9 +33,11 @@ class MyUITest : DynaTest({
     usingApp()
 
     test("UI smoke test") {
-        Article(title = "foo", text = "bar", created = Instant.ofEpochMilli(2213213111), score = 5).save()
+        val article = Article(title = "foo", text = "bar", created = Instant.ofEpochMilli(2213213111), score = 5)
+        article.save()
         val grid = _get<Grid<*>>() // just check whether the Grid is there and populated
         grid.expectRows(1)
+        grid.expectRow(0, "${article.id}", "foo", "1970-01-26T14:46:53.111Z", "5")
     }
 
     group("REST tests") {

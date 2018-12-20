@@ -42,6 +42,7 @@ dependencies {
 
     // test
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.13")
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.0.0")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.0.3")
+    // to have Jetty to start Javalin in
     testCompile("org.eclipse.jetty.websocket:websocket-server:9.4.12.v20180830")
 }
