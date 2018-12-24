@@ -10,6 +10,7 @@ import com.vaadin.ui.UI
 import eu.vaadinonkotlin.restclient.CrudClient
 import eu.vaadinonkotlin.vaadin8.DataLoaderAdapter
 import eu.vaadinonkotlin.vaadin8.generateFilterComponents
+import eu.vaadinonkotlin.vaadin8.sql2o.setDataLoader
 import eu.vaadinonkotlin.vaadin8.withConfigurableFilter2
 
 /**
@@ -24,7 +25,7 @@ class MyUI : UI() {
         val crud = CrudClient("http://localhost:8080/rest/articles/", Article::class.java).overcomeFetchLimit(100)
         grid<Article> {
             setSizeFull()
-            dataProvider = DataLoaderAdapter(crud, { it.id!! }).withConfigurableFilter2()
+            setDataLoader(crud)
 
             addColumnFor(Article::id)
             addColumnFor(Article::title)
