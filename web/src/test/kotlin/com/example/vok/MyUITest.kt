@@ -23,7 +23,7 @@ fun DynaNodeGroup.usingApp() {
         javalin.stop()
         Bootstrap().contextDestroyed(null)
     }
-    beforeEach { MockVaadin.setup { MyUI() } }
+    beforeEach { MockVaadin.setup({ MyUI() }) }
     afterEach { MockVaadin.tearDown() }
     beforeEach { Article.deleteAll() }
     afterEach { Article.deleteAll() }

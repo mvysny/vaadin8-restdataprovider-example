@@ -14,7 +14,7 @@ vaadin {
 }
 
 dependencies {
-    compile("eu.vaadinonkotlin:vok-framework-sql2o:${ext["vok_version"]}")
+    compile("eu.vaadinonkotlin:vok-framework-sql2o:${properties["vok_version"]}")
 
     // logging
     // currently we are logging through the SLF4J API to LogBack. See logback.xml file for the logger configuration
@@ -34,15 +34,15 @@ dependencies {
     compile("com.h2database:h2:1.4.197")
 
     // REST
-    compile("eu.vaadinonkotlin:vok-rest:${ext["vok_version"]}")
-    compile("eu.vaadinonkotlin:vok-rest-client:${ext["vok_version"]}")
+    compile("eu.vaadinonkotlin:vok-rest:${properties["vok_version"]}")
+    compile("eu.vaadinonkotlin:vok-rest-client:${properties["vok_version"]}")
 
     // Kotlin
     compile(kotlin("stdlib-jdk8"))
 
     // test
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.13")
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.0.3")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.1.2")
     // to have Jetty to start Javalin in
     testCompile("org.eclipse.jetty.websocket:websocket-server:9.4.12.v20180830")
 }
