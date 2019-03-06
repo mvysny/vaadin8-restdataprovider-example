@@ -11,13 +11,19 @@ import com.github.vokorm.deleteAll
 import com.vaadin.ui.Grid
 import eu.vaadinonkotlin.restclient.CrudClient
 import io.javalin.Javalin
+import io.javalin.JavalinEvent
+import java.lang.RuntimeException
 import java.time.Instant
 
 fun DynaNodeGroup.usingApp() {
     lateinit var javalin: Javalin
     beforeGroup {
         Bootstrap().contextInitialized(null)
-        javalin = Javalin.create().disableStartupBanner().configureRest().start(8080)
+        javalin = Javalin.create()
+                .disableStartupBanner()
+                .event(JavalinEvent.SERVER_START_FAILED) { throw RuntimeException("Javalin failed to start, see log for details") }
+                .configureRest()
+                .start(8080)
     }
     afterGroup {
         javalin.stop()
