@@ -30,8 +30,8 @@ dependencies {
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // db
-    compile("org.flywaydb:flyway-core:5.2.0")
-    compile("com.h2database:h2:1.4.197")
+    compile("org.flywaydb:flyway-core:5.2.4")
+    compile("com.h2database:h2:1.4.198")
 
     // REST
     compile("eu.vaadinonkotlin:vok-rest:${properties["vok_version"]}")
@@ -42,7 +42,7 @@ dependencies {
 
     // test
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.1.2")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.1.4")
     // to have Jetty to start Javalin in
     testCompile("org.eclipse.jetty.websocket:websocket-server:9.4.12.v20180830")
 }

@@ -21,7 +21,6 @@ fun DynaNodeGroup.usingApp() {
         Bootstrap().contextInitialized(null)
         javalin = Javalin.create()
                 .disableStartupBanner()
-                .event(JavalinEvent.SERVER_START_FAILED) { throw RuntimeException("Javalin failed to start, see log for details") }
                 .configureRest()
                 .start(8080)
     }
