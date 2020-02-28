@@ -9,7 +9,7 @@ import com.vaadin.server.VaadinRequest
 import com.vaadin.ui.UI
 import eu.vaadinonkotlin.restclient.CrudClient
 import eu.vaadinonkotlin.vaadin8.generateFilterComponents
-import eu.vaadinonkotlin.vaadin8.sql2o.setDataLoader
+import eu.vaadinonkotlin.vaadin8.vokdb.setDataLoader
 
 /**
  * The Vaadin UI which demoes all the features. If not familiar with Vaadin, please check out the Vaadin tutorial first.

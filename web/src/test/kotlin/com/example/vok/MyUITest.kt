@@ -7,20 +7,17 @@ import com.github.mvysny.kaributesting.v8.MockVaadin
 import com.github.mvysny.kaributesting.v8._get
 import com.github.mvysny.kaributesting.v8.expectRow
 import com.github.mvysny.kaributesting.v8.expectRows
-import com.github.vokorm.deleteAll
 import com.vaadin.ui.Grid
 import eu.vaadinonkotlin.restclient.CrudClient
 import io.javalin.Javalin
-import io.javalin.JavalinEvent
-import java.lang.RuntimeException
 import java.time.Instant
 
 fun DynaNodeGroup.usingApp() {
     lateinit var javalin: Javalin
+    // bootstrap the server before all tests, and tear it down afterwards
     beforeGroup {
         Bootstrap().contextInitialized(null)
         javalin = Javalin.create()
-                .disableStartupBanner()
                 .configureRest()
                 .start(8080)
     }
@@ -28,8 +25,12 @@ fun DynaNodeGroup.usingApp() {
         javalin.stop()
         Bootstrap().contextDestroyed(null)
     }
+
+    // prepare new mocked Vaadin UI before every test
     beforeEach { MockVaadin.setup({ MyUI() }) }
     afterEach { MockVaadin.tearDown() }
+
+    // clear the database before and after each test
     beforeEach { Article.deleteAll() }
     afterEach { Article.deleteAll() }
 }

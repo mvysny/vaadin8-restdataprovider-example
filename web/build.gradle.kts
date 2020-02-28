@@ -14,7 +14,8 @@ vaadin {
 }
 
 dependencies {
-    compile("eu.vaadinonkotlin:vok-framework-sql2o:${properties["vok_version"]}")
+    compile("eu.vaadinonkotlin:vok-framework-vokdb:${properties["vok_version"]}")
+    compile("com.zaxxer:HikariCP:3.4.1")
 
     // logging
     // currently we are logging through the SLF4J API to LogBack. See logback.xml file for the logger configuration
@@ -30,8 +31,8 @@ dependencies {
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // db
-    compile("org.flywaydb:flyway-core:5.2.4")
-    compile("com.h2database:h2:1.4.198")
+    compile("org.flywaydb:flyway-core:6.2.4")
+    compile("com.h2database:h2:1.4.200")
 
     // REST
     compile("eu.vaadinonkotlin:vok-rest:${properties["vok_version"]}")
@@ -41,8 +42,8 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     // test
-    testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.1.8")
+    testCompile("com.github.mvysny.dynatest:dynatest-engine:0.16")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v8:1.1.19")
     // to have Jetty to start Javalin in
     testCompile("org.eclipse.jetty.websocket:websocket-server:9.4.12.v20180830")
 }
