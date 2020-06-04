@@ -20,6 +20,9 @@ The screenshot of this app:
 
 The project uses code from [Vaadin-on-Kotlin](http://vaadinonkotlin.eu).
 
+> Please see [vaadin10-restdataprovider-example](https://gitlab.com/mvysny/vaadin10-restdataprovider-example)
+for a Vaadin 14-based REST server example app.
+
 # Getting Started
 
 To quickly start the app, make sure that you have Java 8 JDK installed. Then, just type this into your terminal:
